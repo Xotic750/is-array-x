@@ -26,8 +26,8 @@ try {
 /**
  * The isArray() function determines whether the passed value is an Array.
  *
- * @param {*} obj The object to be checked..
- * @return {boolean} `true` if the object is an Array; otherwise, `false`.
+ * @param {*} obj - The object to be checked..
+ * @returns {boolean} `true` if the object is an Array; otherwise, `false`.
  * @example
  * var isArray = require('is-array-x');
  *
