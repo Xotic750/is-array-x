@@ -23,7 +23,7 @@
 ## is-array-x
 Determines whether the passed value is an Array.
 
-**Version**: 1.0.4  
+**Version**: 1.1.0  
 **Author**: Xotic750 <Xotic750@gmail.com>  
 **License**: [MIT](&lt;https://opensource.org/licenses/MIT&gt;)  
 **Copyright**: Xotic750  
