@@ -21,6 +21,9 @@ if (typeof module === 'object' && module.exports) {
   isArray = returnExports;
 }
 
+var hasSymbol = typeof Symbol === 'function' && typeof Symbol('') === 'symbol';
+var ifSymbolIt = hasSymbol ? it : xit;
+
 var itDocument = typeof document === 'undefined' ? xit : it;
 
 describe('isArray', function () {
@@ -42,30 +45,51 @@ describe('isArray', function () {
       -0,
       NaN,
       Infinity,
-      -Infinity
+      -Infinity,
+      null,
+      undefined
     ];
-    primitives.forEach(function (v) {
-      expect(isArray(v)).toBe(false);
+
+    var expected = primitives.map(function () {
+      return false;
     });
+
+    var actual = primitives.map(function (primitive) {
+      return isArray(primitive);
+    });
+
+    expect(actual).toEqual(expected);
   });
 
   it('should fail for other objects', function () {
     var objects = [
       {},
       /foo/,
-      arguments
+      arguments,
+      Object.create(null),
+      new Date(),
+      function () {},
+      { length: 0 }
     ];
-    if (Object.create) {
-      objects.push(Object.create(null));
-    }
 
-    objects.forEach(function (v) {
-      expect(isArray(v)).toBe(false);
+    var expected = objects.map(function () {
+      return false;
     });
+
+    var actual = objects.map(function (object) {
+      return isArray(object);
+    });
+
+    expect(actual).toEqual(expected);
   });
 
   itDocument('should be false for an HTML element', function () {
-    var el = document.getElementsByTagName('div');
-    expect(isArray(el)).toBe(false);
+    expect(isArray(document.getElementsByTagName('div'))).toBe(false);
+  });
+
+  ifSymbolIt('should be false for Symbol', function () {
+    var sym = Symbol('foo');
+    expect(isArray(sym)).toBe(false);
+    expect(isArray(Object(sym))).toBe(false);
   });
 });

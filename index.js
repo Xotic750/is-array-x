@@ -1,6 +1,6 @@
 /**
  * @file Determines whether the passed value is an Array.
- * @version 1.1.1
+ * @version 1.2.0
  * @author Xotic750 <Xotic750@gmail.com>
  * @copyright  Xotic750
  * @license {@link <https://opensource.org/licenses/MIT> MIT}
@@ -9,19 +9,16 @@
 
 'use strict';
 
-var isFalsey = require('is-falsey-x');
 var nativeIsArray = typeof Array.isArray === 'function' && Array.isArray;
 
-var $isArray;
-if (nativeIsArray) {
-  try {
-    if ($isArray([]) && $isArray({ length: 0 }) === false) {
-      $isArray = nativeIsArray;
-    }
-  } catch (ignore) {}
-}
+var testRes = nativeIsArray && require('attempt-x')(function () {
+  return nativeIsArray([]) === true && nativeIsArray({ length: 0 }) === false;
+});
 
-if (isFalsey($isArray)) {
+var $isArray;
+if (testRes && testRes.threw === false && testRes.value === true) {
+  $isArray = nativeIsArray;
+} else {
   var toStringTag = require('to-string-tag-x');
   $isArray = function isArray(obj) {
     return toStringTag(obj) === '[object Array]';
