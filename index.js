@@ -1,6 +1,6 @@
 /**
  * @file Determines whether the passed value is an Array.
- * @version 1.2.0
+ * @version 1.2.1
  * @author Xotic750 <Xotic750@gmail.com>
  * @copyright  Xotic750
  * @license {@link <https://opensource.org/licenses/MIT> MIT}
