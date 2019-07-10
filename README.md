@@ -21,28 +21,27 @@
 <a name="module_is-array-x"></a>
 
 ## is-array-x
+
 Determines whether the passed value is an Array.
 
-**Version**: 1.2.1  
-**Author**: Xotic750 <Xotic750@gmail.com>  
-**License**: [MIT](&lt;https://opensource.org/licenses/MIT&gt;)  
-**Copyright**: Xotic750  
 <a name="exp_module_is-array-x--module.exports"></a>
 
 ### `module.exports` ⇒ <code>boolean</code> ⏏
+
 The isArray() function determines whether the passed value is an Array.
 
 **Kind**: Exported member  
-**Returns**: <code>boolean</code> - `true` if the object is an Array; otherwise, `false`.  
+**Returns**: <code>boolean</code> - `true` if the object is an Array; otherwise, `false`.
 
-| Param | Type | Description |
-| --- | --- | --- |
-| obj | <code>\*</code> | The object to be checked.. |
+| Param | Type            | Description                |
+| ----- | --------------- | -------------------------- |
+| obj   | <code>\*</code> | The object to be checked.. |
 
-**Example**  
+**Example**
+
 ```js
-var isArray = require('is-array-x');
+import isArray from 'is-array-x';
 
-isArray([]); // true
-isArray({}); // false
+console.log(isArray([])); // true
+console.log(isArray({})); // false
 ```
