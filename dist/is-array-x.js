@@ -1,13 +1,13 @@
 /*!
 {
   "copywrite": "Copyright (c) 2017-present",
-  "date": "2019-07-10T19:16:13.318Z",
+  "date": "2019-07-10T19:39:24.315Z",
   "describe": "",
   "description": "Determines whether the passed value is an Array.",
   "file": "is-array-x.js",
-  "hash": "b00f11553891f10108b8",
+  "hash": "964cfa5b09fac87dbda2",
   "license": "MIT",
-  "version": "2.0.0"
+  "version": "2.0.1"
 }
 */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -161,13 +161,13 @@ var isArrayFn = function iife() {
    * The isArray() function determines whether the passed value is an Array.
    *
    * @function isArray
-   * @param {*} obj - The object to be checked..
+   * @param {*} [value] - The object to be checked..
    * @returns {boolean} `true` if the object is an Array; otherwise, `false`.
    */
 
 
-  return function isArray(obj) {
-    return (0, _toStringTagX.default)(obj) === '[object Array]';
+  return function isArray(value) {
+    return (0, _toStringTagX.default)(value) === '[object Array]';
   };
 }();
 

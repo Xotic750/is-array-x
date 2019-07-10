@@ -18,11 +18,11 @@ const isArrayFn = (function iife() {
    * The isArray() function determines whether the passed value is an Array.
    *
    * @function isArray
-   * @param {*} obj - The object to be checked..
+   * @param {*} [value] - The object to be checked..
    * @returns {boolean} `true` if the object is an Array; otherwise, `false`.
    */
-  return function isArray(obj) {
-    return toStringTag(obj) === '[object Array]';
+  return function isArray(value) {
+    return toStringTag(value) === '[object Array]';
   };
 })();
 
