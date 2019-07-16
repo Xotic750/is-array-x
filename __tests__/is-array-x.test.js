@@ -1,7 +1,6 @@
 import noop from 'lodash/noop';
 import isArray from 'src/is-array-x';
 
-/* eslint-disable-next-line compat/compat */
 const hasSymbol = typeof Symbol === 'function' && typeof Symbol('') === 'symbol';
 const ifSymbolIt = hasSymbol ? it : xit;
 
@@ -35,7 +34,7 @@ describe('isArray', function() {
 
   it('should fail for other objects', function() {
     expect.assertions(1);
-    /* eslint-disable-next-line prefer-rest-params */
+
     const objects = [{}, /foo/, arguments, Object.create(null), new Date(), noop, {length: 0}];
 
     const expected = objects.map(function() {
@@ -56,7 +55,7 @@ describe('isArray', function() {
 
   ifSymbolIt('should be false for Symbol', function() {
     expect.assertions(2);
-    /* eslint-disable-next-line compat/compat */
+
     const sym = Symbol('foo');
     expect(isArray(sym)).toBe(false);
     expect(isArray(Object(sym))).toBe(false);
