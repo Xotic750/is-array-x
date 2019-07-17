@@ -2,13 +2,13 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017-present",
-  "date": "2019-07-16T21:23:03.413Z",
+  "date": "2019-07-17T16:59:46.388Z",
   "describe": "",
   "description": "Determines whether the passed value is an Array.",
   "file": "is-array-x.js",
-  "hash": "3d7deccdfbfa5f122b5b",
+  "hash": "85ece551f682f42a388f",
   "license": "MIT",
-  "version": "2.0.7"
+  "version": "2.0.8"
 }
 */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -140,7 +140,7 @@ __webpack_require__.r(__webpack_exports__);
  * @param {...*} [args] - The arguments to invoke the function with.
  * @returns {object} Returns an object of the result.
  */
-function attempt(fn) {
+var attempt = function attempt(fn) {
   try {
     for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
       args[_key - 1] = arguments[_key];
@@ -158,7 +158,9 @@ function attempt(fn) {
       value: e
     };
   }
-}
+};
+
+/* harmony default export */ var attempt_x_esm = (attempt);
 
 
 // CONCATENATED MODULE: ./node_modules/to-string-tag-x/dist/to-string-tag-x.esm.js
@@ -171,7 +173,7 @@ var nativeObjectToString = {}.toString;
  * @returns {string} The object type string.
  */
 
-function toStringTag(value) {
+var toStringTag = function toStringTag(value) {
   if (value === null) {
     return '[object Null]';
   }
@@ -181,7 +183,9 @@ function toStringTag(value) {
   }
 
   return nativeObjectToString.call(value);
-}
+};
+
+/* harmony default export */ var to_string_tag_x_esm = (toStringTag);
 
 
 // CONCATENATED MODULE: ./dist/is-array-x.esm.js
@@ -193,7 +197,7 @@ function _newArrowCheck(innerThis, boundThis) { if (innerThis !== boundThis) { t
 
 var nativeIsArray = [].isArray;
 var isArrayNative = typeof nativeIsArray === 'function' && nativeIsArray;
-var testRes = isArrayNative && attempt(function () {
+var testRes = isArrayNative && attempt_x_esm(function () {
   _newArrowCheck(this, _this);
 
   return isArrayNative([]) === true && isArrayNative({
@@ -215,7 +219,7 @@ var isArrayFn = function iife() {
 
 
   return function isArray(value) {
-    return toStringTag(value) === '[object Array]';
+    return to_string_tag_x_esm(value) === '[object Array]';
   };
 }();
 
