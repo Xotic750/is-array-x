@@ -2,7 +2,7 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017-present",
-  "date": "2019-07-31T17:26:51.755Z",
+  "date": "2019-07-31T19:44:22.142Z",
   "describe": "",
   "description": "Determines whether the passed value is an Array.",
   "file": "is-array-x.js",
