@@ -2,13 +2,13 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017-present",
-  "date": "2019-08-05T18:31:45.178Z",
+  "date": "2019-08-05T21:14:40.813Z",
   "describe": "",
   "description": "Determines whether the passed value is an Array.",
   "file": "is-array-x.js",
   "hash": "54be4328fe94e0152ade",
   "license": "MIT",
-  "version": "2.0.23"
+  "version": "2.0.24"
 }
 */
 (function webpackUniversalModuleDefinition(root, factory) {
